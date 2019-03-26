@@ -1,2 +1,1 @@
-# java_partice_code
-this is learn_java
+﻿﻿﻿﻿﻿﻿﻿﻿﻿# java_partice~codethis is learn_javahaha
