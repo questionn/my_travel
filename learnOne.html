@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js_learn</title>
+	</head>
+	<script >
+	function checkForm(){
+		//获取对象
+		var username = document.getElementById("name");
+		if(username.value == "" || username.value == "请输入用户名"){
+			window.alert("请输入用户名");
+			username.focus();
+			return false;
+		}else if(username.value.length < 6){
+			window.alert("用户名长度不能小于6位");
+			username.focus();
+			return false;
+		}
+		
+		//判断密码
+		var pwd = document.getElementById("pwd");
+		//
+		if(pwd.value == ""){
+			window.alert("请输入密码");
+			pwd.focus();
+			return false;
+		}else if(pwd.value.length < 6){
+			window.alert("密码不能小于6位");
+			pwd.focus();
+			return false;
+		}
+		
+		//判断密码和确认密码是否一致
+		var repwd = document.getElementById("repwd");
+		if(repwd.value != pwd.value){
+			window.alert("两次输入密码不一致");
+			repwd.focus();
+			return false;
+		}
+	}
+	function clearAll(){
+		var username = document.getElementById("name");
+		var pwd = document.getElementById("pwd");
+		var repwd = document.getElementById("repwd");
+		username.value = "请输入用户名";
+		pwd.value = "";
+		repwd.value = "";
+		username.focus();
+	}
+	
+	</script>
+	<body>
+		<center>
+		<form action="" method="get">
+			<table border="1">
+				<tr>
+					<td align="right">用户名：</td>
+					<td align="left"><input type="text" name="username" id = "name" value="请输入用户名" maxlength="10"/></td>
+				</tr>
+				<span id = "usesapn"></span>
+				<tr>
+					<td align="right">密码：</td>
+					<td align="left"><input type="password" name="password" id = "pwd" title="请输入密码"/></td>
+				</tr>
+				<tr>
+					<td align="right">确认密码：</td>
+					<td align="left"><input type="password" name="repeatword" id = "repwd"/></td>
+				</tr>
+				<tr >
+					<td align="center" colspan="2">
+						<input type="submit" id = "sub" value="提交" onclick=" return checkForm()"/>
+						<input type="reset" value="重置" id = "res" onclick = "return clearAll()" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+	</body>
+</html>
